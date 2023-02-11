@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Electroware | @yield('title')</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/website/favicon.svg')}}" />
+
+    @include('partials.website.style')
+</head>
+<body>
+
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+
+<!-- Header -->
+@include('partials.website.header')
+<!-- Header End -->
+
+
+@yield('body')
+
+
+@include('partials.website.footer')
+
+
+<a href="#" class="scroll-top">
+    <i class="lni lni-chevron-up"></i>
+</a>
+
+@include('partials.website.script')
+</body>
+
+</html>
