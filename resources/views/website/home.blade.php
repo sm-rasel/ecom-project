@@ -646,9 +646,9 @@
                                 <h2 id="secondstxt">Secondes</h2>
                             </div>
                         </div>
-                        <div style="background: rgb(204, 24, 24);" class="alert">
-                            <h1 style="padding: 50px 80px;color: white;">We are sorry, Event ended ! </h1>
-                        </div>
+{{--                        <div style="background: rgb(204, 24, 24);" class="alert">--}}
+{{--                            <h1 style="padding: 50px 80px;color: white;">We are sorry, Event ended ! </h1>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

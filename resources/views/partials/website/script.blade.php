@@ -1,4 +1,4 @@
-
+{{-- Website seript file --}}
 <script src="{{asset('js/website/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/website/tiny-slider.js')}}"></script>
 <script src="{{asset('js/website/glightbox.min.js')}}"></script>
