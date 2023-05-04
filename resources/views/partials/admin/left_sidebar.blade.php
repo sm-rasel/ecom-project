@@ -18,25 +18,13 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow"  key="t-vertical">Slider</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-light-sidebar.html" key="t-light-sidebar">Slider Content</a></li>
-                                <li><a href="layouts-compact-sidebar.html" key="t-compact-sidebar">Banner-Image</a></li>
-                            </ul>
+                            <a href="{{ route('admin.slider_index') }}" key="t-vertical">Slider</a>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">Small Banner-1</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-light-sidebar.html" key="t-light-sidebar">Slider Content</a></li>
-                                <li><a href="layouts-compact-sidebar.html" key="t-compact-sidebar">Banner-Image</a></li>
-                            </ul>
+                            <a href="javascript: void(0);" key="t-vertical">Small Banner-1</a>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">Small Banner-2</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-light-sidebar.html" key="t-light-sidebar">Slider Content</a></li>
-                                <li><a href="layouts-compact-sidebar.html" key="t-compact-sidebar">Banner-Image</a></li>
-                            </ul>
+                            <a href="javascript: void(0);" key="t-vertical">Small Banner-2</a>
                         </li>
                     </ul>
                 </li>

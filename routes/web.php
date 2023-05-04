@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\Pagesettings\SliderSectionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,8 @@ Route::group(['prefix'=> 'admin', 'namespace' => 'Admin'], function ()
     Route::get('/', [AdminController::class, 'index'])->name('admin.home');
     Route::group(['prefix' => 'page-settings', 'namespace' => 'PageSettings'], function ()
     {
-        Route::get('/');
+        Route::get('/slider-section', [SliderSectionController::class, 'sliderIndex'])->name('admin.slider_index');
+        Route::get('/slider-section-add', [SliderSectionController::class, 'sliderAdd'])->name('admin.slider_add');
+        Route::post('/slider-section-add', [SliderSectionController::class, 'sliderStore'])->name('admin.slider_store');
     });
 });

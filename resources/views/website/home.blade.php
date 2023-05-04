@@ -9,10 +9,8 @@
             <div class="row">
                 <div class="col-lg-8 col-12 custom-padding-right">
                     <div class="slider-head">
-
                         <div class="hero-slider">
-
-                            <div class="single-slider" style="background-image: url({{asset('/')}}images/website/hero/slider-bg1.jpg);">
+                            <div class="single-slider" style="background-image: url({{asset('images/website/hero/slider-bg1.jpg')}});">
                                 <div class="content">
                                     <h2><span>No restocking fee ($35 savings)</span>
                                         M75 Sport Watch
@@ -27,7 +25,7 @@
                             </div>
 
 
-                            <div class="single-slider" style="background-image: url({{asset('/')}}images/website/hero/slider-bg2.jpg);">
+                            <div class="single-slider" style="background-image: url({{asset('images/website/hero/slider-bg2.jpg')}});">
                                 <div class="content">
                                     <h2><span>Big Sale Offer</span>
                                         Get the Best Deal on CCTV Camera
