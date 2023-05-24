@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('slider_sections', function (Blueprint $table) {
             $table->id();
             $table->longText('slider_description');
+            $table->string('button_text');
             $table->string('button_url');
             $table->string('slider_image');
+            $table->integer('slider_order');
             $table->tinyInteger('status')->default(1)->comment('1=Active, 2=Inactive');
             $table->timestamps();
         });

@@ -23,8 +23,16 @@ Route::group(['prefix'=> 'admin', 'namespace' => 'Admin'], function ()
     Route::get('/', [AdminController::class, 'index'])->name('admin.home');
     Route::group(['prefix' => 'page-settings', 'namespace' => 'PageSettings'], function ()
     {
+        //Big Slider Section
         Route::get('/slider-section', [SliderSectionController::class, 'sliderIndex'])->name('admin.slider_index');
         Route::get('/slider-section-add', [SliderSectionController::class, 'sliderAdd'])->name('admin.slider_add');
-        Route::post('/slider-section-add', [SliderSectionController::class, 'sliderStore'])->name('admin.slider_store');
+        Route::post('/slider-section-store', [SliderSectionController::class, 'sliderStore'])->name('admin.slider_store');
+        Route::get('/slider-section-edit/{id}', [SliderSectionController::class, 'sliderEdit'])->name('admin.slider_edit');
+        Route::post('/slider-section-update/{id}', [SliderSectionController::class, 'sliderUpdate'])->name('admin.slider_update');
+        Route::post('/slider-section-status-update/{id}', [SliderSectionController::class, 'sliderStatusUpdate'])->name('admin.slider_status_update');
+        Route::post('/slider-section-delete/{id}', [SliderSectionController::class, 'sliderDelete'])->name('admin.slider_delete');
+
+        //Small Banner-1
+
     });
 });

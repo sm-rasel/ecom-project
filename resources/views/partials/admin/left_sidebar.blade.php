@@ -21,10 +21,10 @@
                             <a href="{{ route('admin.slider_index') }}" key="t-vertical">Slider</a>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" key="t-vertical">Small Banner-1</a>
+                            <a href="#" key="t-vertical">Small Banner-1</a>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" key="t-vertical">Small Banner-2</a>
+                            <a href="#" key="t-vertical">Small Banner-2</a>
                         </li>
                     </ul>
                 </li>

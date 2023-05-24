@@ -13,6 +13,7 @@
 <link href="{{asset('libs/dropzone/min/dropzone.min.css')}}" rel="stylesheet" type="text/css" />
 <!-- Icons Css -->
 <link href="{{asset('css/admin/icons.min.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('css/admin/ecom-project.min.css')}}" rel="stylesheet" type="text/css" />
 <!-- App Css-->
 <link href="{{asset('css/admin/app.min.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{asset('css/admin/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />

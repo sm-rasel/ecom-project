@@ -48,10 +48,26 @@
 
 <script src="{{ asset('js/admin/pages/sweetalert.min.js') }}"></script>
 <script src="{{ asset('js/admin/pages/toastr.min.js') }}"></script>
+<script src="{{ asset('js/admin/pages/ajax-request.js') }}"></script>
 
 <script>
     $(document).ready(function () {$("#datatable").DataTable()});
     @if(Session::has('message'))
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "progressBar": true,
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
          var type = "{{ Session::get('alert-type', 'info') }}";
          switch (type){
              case 'info':
@@ -62,7 +78,7 @@
                  toastr.warning("{{ Session::get('message') }}");
                  break;
 
-             case 'successs':
+             case 'success':
                  toastr.success("{{ Session::get('message') }}");
                  break;
              case 'error':

@@ -1,3 +1,5 @@
+          // Slider Form Validation start
+
 // $('#sliderDescription').keyup(function (){
 //     var sliderDescription = $(this).val();
 //     if (sliderDescription.length >= 2)
@@ -9,6 +11,28 @@
 //         $('#sliderDescriptionError').text('Please type minimum 5 letter in here!!');
 //     }
 // });
+//Slider Button text validation
+function checkButtonText()
+{
+    var buttonText = $('#buttonText').val();
+    var regex = /^[a-zA-Z- ]{2,15}$/;
+    if (regex.test(buttonText))
+    {
+        $('#sliderBtn').prop('disabled', false);
+        $('#buttonTextError').text('');
+        return true;
+    }
+    else
+    {
+        $('#sliderBtn').prop('disabled', true);
+        $('#buttonTextError').text('Text field is required and min 2 to 15 letter');
+        return false;
+    }
+}
+$('#buttonText').keyup(function (){
+    checkButtonText();
+});
+//Slider Button text validation End
 
 //Slider Url validation-view (slider_section)
 function checkUrl() {
@@ -30,10 +54,33 @@ function checkUrl() {
 $('#buttonUrl').keyup(function (){
     checkUrl();
 });
-//Slider Url validation end
+//Slider Url validation End
+
+//Slider Order number validation
+function checkNumber()
+{
+    var number = $('#sliderOrder').val();
+    var regex = /^[0-9]*$/;
+    if (regex.test(number))
+    {
+        $('#sliderBtn').prop('disabled', false);
+        $('#sliderOrderError').text('');
+        return true;
+    }
+    else
+    {
+        $('#sliderBtn').prop('disabled', true);
+        $('#sliderOrderError').text('Please provide a valid Enrollment Number');
+        return false;
+    }
+}
+$('#sliderOrder').keyup(function (){
+    checkNumber();
+})
+//Slider Order number validation End
 
 $('#sliderForm').submit(function () {
-    if (checkUrl() == true)
+    if (checkUrl() == true && checkNumber() == true && checkButtonText() == true)
     {
         return true;
     }
@@ -51,4 +98,5 @@ var loadFile = function(event) {
         URL.revokeObjectURL(output.src) // free memory
     }
 };
+        // Slider Form Validation start
 

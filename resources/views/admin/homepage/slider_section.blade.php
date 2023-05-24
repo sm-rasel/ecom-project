@@ -35,16 +35,52 @@
                     <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th class="text-center">Sl</th>
+                                <th class="text-center">Order</th>
+                                <th class="text-center">Description</th>
+                                <th class="text-center">Image</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
 
-                        <tbody></tbody>
+                        <tbody>
+                        @foreach($sliders as $slider)
+                            <tr>
+                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td class="text-center">{{ $slider->slider_order }}</td>
+                                <td class="text-center">{!! Str::words(strip_tags($slider->slider_description), 5) !!}</td>
+                                <td class="text-center">
+                                    <img src="{{ asset($slider->slider_image) }}" class="admin-center-img" alt="">
+                                </td>
+                                <td class="text-center">
+                                    @if($slider->status == 1)
+                                        <span class="badge rounded-pill badge-soft-success">Active</span>
+                                    @else
+                                        <span class="badge rounded-pill badge-soft-danger">Inactive</span>
+                                    @endif
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-sm btn-outline-success" title="Show Slider Section">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-primary" title="Edit Slider Section" onclick="window.location.href='{{ route('admin.slider_edit', ['id' => $slider->id]) }}'">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-warning" data-id="{{ $slider->id }}" data-action="{{ route('admin.slider_status_update', ['id' => $slider->id]) }}" onclick="updateSliderStatus({{$slider->id}})" title="Active Status">
+                                        @if($slider->status == 1)
+                                            <i class="fas fa-check"></i>
+                                        @else
+                                            <i class="fas fa-times"></i>
+                                        @endif
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" {{ $slider->status == 1 ? 'disabled': '' }} data-id="{{ $slider->id }}" data-action="{{ route('admin.slider_status_update', ['id' => $slider->id]) }}" onclick="deleteSliderSection({{ $slider->id }})" title="Delete Section">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
